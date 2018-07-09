@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+
+<head>
+	<meta charset="UTF-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+	
+	<link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/3.3.7/css/bootstrap.min.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
+	
+	<title>Men Clothing | Order Summited</title>
+</head>
+
+<body>
+	<!-- Navbar -->
+	<ul>
+	  <li><a class="active" href="home-page">Pagina de Inicio</a></li>
+	  <li><a href="order">Pedido</a></li>
+	  <li style="float:right"><a href="contact">Contacto</a></li>
+	  <li style="float:right"><a href="about">Hacerca de Nosotros</a></li>
+	</ul>
+
+	<!-- Header -->
+	<header class="header" style="max-width:1600px; min-width:500px" id="home">
+		<h1 class="title">Clothing Factory</h1>
+	</header>
+
+	<h1>Realiza tu pedido</h1>
+    <form action="#" th:action="@{/order}" th:object="${order}" method="post">
+        <p>Nombre de la microempresa: <input type="text" th:field="*{companyname}" /></p>
+        <p>Descripcion de servicio: <textarea th:field="*{productServiceDescription}" ></textarea></p>
+        <p>Nombre del formato: <input type="text" th:field="*{formName}" /></p>
+        <p>Nombre del cliente: <input type="text" th:field="*{requestorName}" /></p>
+        <p>Tipo de identificacion: <input type="text" th:field="*{idType}" /></p>
+        <p>Numero de identifiacion: <input type="text" th:field="*{idNummber}" /></p>
+        
+        <p>Cantidad del producto: <input type="number" min="0" max="5" th:field="*{productQuantity}" /></p>
+        <p>Fecha de envio: <input type="datetime" value="mm/dd/yyyy, --:-- --" th:field="*{deliveryDate}" /></p>
+        <p>Direccion de envio: <input type="text" th:field="*{deliveryAddress}" /></p>
+        
+        <p><input type="submit" value="Pedir" /> <input type="reset" value="Reset" /></p>
+    </form>
+    
+    <!-- Footer -->	
+	<footer class="footer">
+		<p>Address: Circular #74, Medellín, Antioquia</p>
+		<p>Telephone: (4) 4133209</p>
+		<p>Email: bosi@mybosi.com.</p>
+	</footer>
+</body>
+</html>

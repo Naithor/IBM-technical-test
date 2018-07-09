@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+
+<head>
+	<meta charset="UTF-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+	
+	<link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/3.3.7/css/bootstrap.min.css}"/>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
+	
+	<title>Men Clothing | Order Summited</title>
+</head>
+
+<body>
+	<!-- Navbar -->
+	<ul>
+	  <li><a class="active" href="home-page">Pagina de Inicio</a></li>
+	  <li><a href="order">Pedido</a></li>
+	  <li style="float:right"><a href="contact">Contacto</a></li>
+	  <li style="float:right"><a href="about">Hacerca de Nosotros</a></li>
+	</ul>
+
+	<!-- Header -->
+	<header class="header" style="max-width:1600px; min-width:500px" id="home">
+		<h1 class="title">Clothing Factory</h1>
+	</header>
+
+    <h1>Su pedido se ha realizado con exito</h1>
+    <h3>Detalles del pedido:</h3>
+    <p th:text="'Nombre de la microempresa: ' + ${order.companyname}" />
+    <p th:text="'Descripcion del servicio: ' + ${order.productServiceDescription}" />
+    <p th:text="'Nombre del formulario: ' + ${order.formName}" />
+    <p th:text="'Nombre del cliente: ' + ${order.requestorName}" />
+    <p th:text="'Tipo de identificacion: ' + ${order.idType}" />
+    <p th:text="'Numero de identificacion: ' + ${order.idNummber}" />
+    
+    <p th:text="'Cantidad del producto: ' + ${order.productQuantity}" />
+    <p th:text="'Fecha de envio: ' + ${order.deliveryDate}" />
+    <p th:text="'Direccion de envio: ' + ${order.deliveryAddress}" />
+    <p th:text="'Costo total: ' + ${order.totalCost}" />
+    <p>El precio del transporte no está incluido y dependerá del lugar de entrega, 
+    	este se deberá cancelar junto con el valor del pedido en el momento de la entrega.</p>
+        
+    <!-- Footer -->	
+	<footer class="footer">
+		<p>Address: Circular #74, Medellín, Antioquia</p>
+		<p>Telephone: (4) 4133209</p>
+		<p>Email: bosi@mybosi.com.</p>
+	</footer>
+</body>
+</html>
